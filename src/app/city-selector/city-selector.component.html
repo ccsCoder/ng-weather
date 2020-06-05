@@ -1,0 +1,8 @@
+<div class="city-selector">
+  <input type="text" list="cities" name="city-chooser" />
+  <datalist id="cities">
+    <option *ngFor="let city of cities">
+      {{city.name}}
+    </option>
+  </datalist>
+</div>
