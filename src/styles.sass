@@ -20,4 +20,76 @@ html,body
 body
   padding: 10px
 
+/* Font Icons */
+@font-face
+  font-family: 'fontello'
+  src: url('assets/font/fontello.eot?96209920')
+  src: url('assets/font/fontello.eot?96209920#iefix') format("embedded-opentype"),url('assets/font/fontello.woff2?96209920') format("woff2"), url('assets/font/fontello.woff?96209920') format("woff"), url('assets/font/fontello.ttf?96209920') format("truetype"), url('assets/font/fontello.svg?96209920#fontello') format("svg")
+  font-weight: normal
+  font-style: normal
 
+[class^="icon-"]:before, [class*=" icon-"]:before
+  font-family: "fontello"
+  font-style: normal
+  font-weight: normal
+  speak: never
+  display: inline-block
+  text-decoration: inherit
+  width: 1em
+  margin-right: .2em
+  text-align: center
+  font-variant: normal
+  text-transform: none
+
+  // /* fix buttons height, for twitter bootstrap
+  line-height: 1em
+
+  // /* Animation center compensation - margins should be symmetric
+  // /* remove if not needed
+  margin-left: .2em
+
+  // /* you can be more comfortable with increased icons size
+  // /* font-size: 120%;
+
+  // /* Font smoothing. That was taken from TWBS
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+  // for 3D effect
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3)
+
+.icon-sun:before
+  content: '\e800'
+
+.icon-sun-filled:before
+  content: '\e801'
+
+.icon-cloud:before
+  content: '\e802'
+
+.icon-rain:before
+  content: '\e803'
+
+.icon-cloud-sun:before
+  content: '\e804'
+
+.icon-moon:before
+  content: '\e805'
+
+.icon-drizzle:before
+  content: '\e806'
+
+.icon-snow:before
+  content: '\e807'
+
+.icon-cloud-flash:before
+  content: '\e808'
+
+.icon-cloud-wind:before
+  content: '\e809'
+
+.icon-wind:before
+  content: '\e80a'
+
+.icon-temperatire:before
+  content: '\e80b'

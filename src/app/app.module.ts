@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CitySelectorComponent } from './city-selector/city-selector.component';
 import { CityNameComponent } from './city-name/city-name.component';
+import { WeatherIconComponent } from './weather-icon/weather-icon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CitySelectorComponent,
-    CityNameComponent
+    CityNameComponent,
+    WeatherIconComponent
   ],
   imports: [
     BrowserModule
