@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { CitySelectorComponent } from './city-selector/city-selector.component';
 import { CityNameComponent } from './city-name/city-name.component';
 import { WeatherIconComponent } from './weather-icon/weather-icon.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,8 @@ import { WeatherIconComponent } from './weather-icon/weather-icon.component';
     WeatherIconComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
