@@ -8,7 +8,7 @@ export class WeatherIconProviderService {
 
   constructor() {
     this.iconMap = {
-      '03d': 'windy-inv',
+      '03d': 'windy',
       '03n': 'windy',
       '04n': 'clouds',
       '04d': 'clouds-inv',
