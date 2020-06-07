@@ -8,9 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TemparatureIndicatorComponent implements OnInit {
   // Passed on from the parent
   @Input() temp: number;
-  @Input() max: number;
-  @Input() min: number;
-  @Input() feelsLike: number;
 
   constructor() { }
 

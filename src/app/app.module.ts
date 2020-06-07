@@ -6,6 +6,7 @@ import { CityNameComponent } from './city-name/city-name.component';
 import { WeatherIconComponent } from './weather-icon/weather-icon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TemparatureIndicatorComponent } from './temparature-indicator/temparature-indicator.component';
+import { WeatherDetailsComponent } from './weather-details/weather-details.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TemparatureIndicatorComponent } from './temparature-indicator/temparatu
     CitySelectorComponent,
     CityNameComponent,
     WeatherIconComponent,
-    TemparatureIndicatorComponent
+    TemparatureIndicatorComponent,
+    WeatherDetailsComponent
   ],
   imports: [
     BrowserModule,

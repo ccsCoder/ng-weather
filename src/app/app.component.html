@@ -2,13 +2,17 @@
   <app-city-name></app-city-name>
   <app-temparature-indicator
     [temp]="currTemp"
-    [max]="maxTemp"
-    [min]="minTemp"
-    [feelsLike]="feelsLikeTemp"
   >
   </app-temparature-indicator>
   <app-weather-icon
     [url]="iconURL"
     [description]="description">
   </app-weather-icon>
+  <app-weather-details
+    [min]="minTemp"
+    [max]="maxTemp"
+    [feelsLike]="feelsLikeTemp"
+    [windSpeed]="windSpeed"
+  >
+  </app-weather-details>
 </div>

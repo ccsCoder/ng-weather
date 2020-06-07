@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     this.feelsLikeTemp = this.convertToCelcius(main.feels_like);
     this.description = weather[0].description;
     this.iconURL = this.weatherIconProviderService.getWeatherIcon(weather[0].icon);
-    this.windSpeed = wind.speed;
+    this.windSpeed = Math.round(wind.speed);
   }
 
   getWeatherDetailsForCity(): void {
