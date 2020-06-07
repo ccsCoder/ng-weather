@@ -1,4 +1,18 @@
 <div class="container">
   <app-city-name></app-city-name>
-  <app-weather-icon></app-weather-icon>
+  <app-temparature-indicator
+    [temp]="currTemp"
+  >
+  </app-temparature-indicator>
+  <app-weather-icon
+    [url]="iconURL"
+    [description]="description">
+  </app-weather-icon>
+  <app-weather-details
+    [min]="minTemp"
+    [max]="maxTemp"
+    [feelsLike]="feelsLikeTemp"
+    [windSpeed]="windSpeed"
+  >
+  </app-weather-details>
 </div>

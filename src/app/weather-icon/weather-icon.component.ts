@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-weather-icon',
@@ -6,16 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weather-icon.component.sass']
 })
 export class WeatherIconComponent implements OnInit {
-
-  weatherType: string;
-
-  constructor() {
-    this.weatherType = 'sun';
-  }
-
-  public getWeatherTypeString(): string {
-    return `icon-${this.weatherType}`;
-  }
+  @Input() url: string;
+  @Input() description: string;
 
   ngOnInit(): void {
   }
