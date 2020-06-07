@@ -7,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WeatherIconComponent implements OnInit {
   @Input() url: string;
-
-  constructor() {}
+  @Input() description: string;
 
   ngOnInit(): void {
   }

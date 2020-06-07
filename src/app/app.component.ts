@@ -22,14 +22,18 @@ export class AppComponent implements OnInit {
     private weatherIconProviderService: WeatherIconProviderService
   ) {}
 
+  private convertToCelcius(kelvin: number): number {
+    return Math.round(kelvin - 273.15);
+  }
+
   setWeatherData(weatherData): void {
     const {main, weather, wind} = weatherData;
     // set the values
-    this.currTemp = Math.round(main.temp);
-    this.maxTemp = Math.round(main.temp_max);
-    this.minTemp = Math.round(main.temp_min);
-    this.feelsLikeTemp = Math.round(main.feels_like);
-    this.description = weather.description;
+    this.currTemp = this.convertToCelcius(main.temp);
+    this.maxTemp = this.convertToCelcius(main.temp_max);
+    this.minTemp = this.convertToCelcius(main.temp_min);
+    this.feelsLikeTemp = this.convertToCelcius(main.feels_like);
+    this.description = weather[0].description;
     this.iconURL = this.weatherIconProviderService.getWeatherIcon(weather[0].icon);
     this.windSpeed = wind.speed;
   }
