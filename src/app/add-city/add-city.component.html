@@ -1,0 +1,14 @@
+<div class="city-selection">
+  <h1>Select your city</h1>
+  <div class="city-autocomplete-list">
+  <input
+    list="city-list"
+    type="text"
+    class="city-name-input"
+    (input)="onCityInput($event.target.value)"
+  />
+  <datalist id="city-list">
+    <option *ngFor="let city of cities" value={{city}}></option>
+  </datalist>
+  </div>
+</div>

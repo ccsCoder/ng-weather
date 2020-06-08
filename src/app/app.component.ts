@@ -22,10 +22,6 @@ export class AppComponent implements OnInit {
     private weatherIconProviderService: WeatherIconProviderService
   ) { }
 
-  // private convertToCelcius(kelvin: number): number {
-  //   return Math.round(kelvin - 273.15);
-  // }
-
   setWeatherData(weatherData): void {
     const { main, weather, wind } = weatherData;
     // set the values
