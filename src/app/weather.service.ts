@@ -10,7 +10,7 @@ export class WeatherService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCityWeather(city) {
+  getCityWeather(city: string) {
     return this.httpClient.get(`${this.apiUrl}&q=${city}`);
   }
 

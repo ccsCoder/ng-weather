@@ -24,7 +24,6 @@ export class AppComponent implements OnInit {
   ) { }
 
   citySelectedHandler($event): void {
-    console.log(`***From app component, ${$event}`);
     this.city = $event;
     this.getWeatherDetailsForCity();
   }

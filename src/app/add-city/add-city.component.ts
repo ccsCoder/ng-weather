@@ -19,8 +19,7 @@ export class AddCityComponent implements OnInit {
   isError = false;
   selectedCity = null;
 
-  constructor(private weatherService: WeatherService) {
-  }
+  constructor(private weatherService: WeatherService) {}
 
   fetchCities(cityPrefix: string): void {
     // dont make any server call for < 3 characters
@@ -29,7 +28,15 @@ export class AddCityComponent implements OnInit {
       this.message = 'Please type 3 or more characters to search';
       return;
     }
-    this.weatherService.getCityNames(cityPrefix).subscribe(cityData => {
+    this.weatherService.getCityNames(cityPrefix).subscribe((cityData: string[])  => {
+      if (cityData.length === 0) {
+        this.message = 'No Cities found with that name.';
+        this.isError = true;
+        this.setCities([]);
+        return;
+      }
+      this.message = '';
+      this.isError = false;
       this.setCities(cityData);
     });
   }
@@ -39,13 +46,16 @@ export class AddCityComponent implements OnInit {
       debounceTime(300),
       distinctUntilChanged(),
     ).subscribe(searchText => {
-      console.log(`SearchText: ${searchText}`);
       // make the API call now
       this.fetchCities(searchText);
     });
   }
 
   onKeyUp(cityName: string): void {
+    if (this.isError) {
+      // no cities were found matchng the expression
+      return;
+    }
     const onlyCityName = cityName.replace(/,[^,]*$/, '');
     this.selectedCity = onlyCityName;
     this.citySelectionPerformed.emit(onlyCityName);
