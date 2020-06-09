@@ -19,6 +19,7 @@ export class WeatherIconProviderService {
       '01d': 'sun',
       '01n': 'moon',
       '50d': 'mist',
+      '50n': 'mist',
       '10d': 'hail',
       '10n': 'hail-inv',
       celcius: 'celcius',

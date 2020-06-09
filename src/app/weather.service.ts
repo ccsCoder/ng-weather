@@ -7,15 +7,11 @@ export class WeatherService {
   apiUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${this.apiKey}&units=metric`;
   geoApiUrl = `https://spott.p.rapidapi.com/places/autocomplete?q=Haza&limit=5&type=CITY`;
 
-  // This is only for now, as the city will actually be fetched from a service.
-  city: string;
 
-  constructor(private httpClient: HttpClient) {
-    this.city = 'Bengaluru';
-  }
+  constructor(private httpClient: HttpClient) { }
 
-  getCityWeather() {
-    return this.httpClient.get(`${this.apiUrl}&q=${this.city}`);
+  getCityWeather(city) {
+    return this.httpClient.get(`${this.apiUrl}&q=${city}`);
   }
 
   getCityNames(prefix: string) {
