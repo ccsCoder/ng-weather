@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -10,9 +10,11 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class AddCityComponent implements OnInit {
 
+  @Output()
+  citySelectionPerformed: EventEmitter<string> = new EventEmitter<string>();
+
   cities: string[];
   searchTextChanged = new Subject<string>();
-  suggestionsList: Element;
   message = '';
   isError = false;
   selectedCity = null;
@@ -33,10 +35,6 @@ export class AddCityComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.suggestionsList = document.querySelector('#city-list');
-    // test
-    console.log(this.suggestionsList);
-
     this.searchTextChanged.pipe(
       debounceTime(300),
       distinctUntilChanged(),
@@ -48,7 +46,9 @@ export class AddCityComponent implements OnInit {
   }
 
   onKeyUp(cityName: string): void {
-    this.selectedCity = cityName.replace(/,[^,]*$/, '');
+    const onlyCityName = cityName.replace(/,[^,]*$/, '');
+    this.selectedCity = onlyCityName;
+    this.citySelectionPerformed.emit(onlyCityName);
   }
 
   setCities(cityData): void {

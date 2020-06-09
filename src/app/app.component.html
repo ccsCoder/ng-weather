@@ -1,6 +1,7 @@
 <div class="container">
-  <app-add-city></app-add-city>
-  <!-- <app-city-name></app-city-name>
+  <app-add-city (citySelectionPerformed)="citySelectedHandler($event)"></app-add-city>
+  <app-city-name [cityName]="city">
+  </app-city-name>
   <app-temparature-indicator
     [temp]="currTemp"
   >
@@ -15,5 +16,5 @@
     [feelsLike]="feelsLikeTemp"
     [windSpeed]="windSpeed"
   >
-  </app-weather-details> -->
+  </app-weather-details>
 </div>

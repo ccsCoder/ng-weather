@@ -1,4 +1,4 @@
-<div class="weather-icon">
+<div *ngIf="description !== null" class="weather-icon">
   <i [ngClass]="url"></i>
   <span class="description">{{description}}</span>
 </div>
