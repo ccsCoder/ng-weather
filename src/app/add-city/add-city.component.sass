@@ -23,3 +23,17 @@ div.city-autocomplete-list
 p
   color: #e9c46a
   font-size: 1.5rem
+
+@media screen and (max-width: 500px)
+  div.city-selection
+    width: 100vw
+  h1
+    font-size: 3rem
+  div.city-autocomplete-list
+    & > input.city-name-input
+      width: 90vw
+      height: 40px
+      border-radius: 10px
+      font-size: 1rem
+  p
+    font-size: 1rem
