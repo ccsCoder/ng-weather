@@ -1,20 +1,18 @@
-@media screen and (max-width: 500px)
-  div.weather-icon
-    & span.description
-      font-size: 2rem
-    & i
-      font-size: 4rem
-
-.weather-icon
-  display: flex
-  justify-content: center
-  align-items: center
+div.weather-icon
   color: #98C1D9
-  transform: translate(0, -20%)
-
   & span.description
-    font-size: 3rem
+    font-size: 2rem
     text-transform: capitalize
-
   & i
-    font-size: 7rem
+    font-size: 4rem
+    display: block
+    text-align: center
+
+  @media screen and (min-width: 768px)
+      & span.description
+        font-size: 4rem
+      & i
+        font-size: 8rem
+
+  @media screen and (min-width: 992px)
+    grid-row: 3
