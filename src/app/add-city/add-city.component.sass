@@ -1,6 +1,8 @@
 div.city-selection
   text-align: center
   padding: 0 1em
+  max-width: 320px
+  margin: 0 auto
 h1
   margin: 0 0 0.25em
   font-size: 2.9rem
@@ -17,17 +19,16 @@ p
 
 @media screen and (min-width: 768px)
   div.city-selection
-    max-width: 30em
-    margin: 0 auto
+    max-width: 27em
   h1
     font-size: 4rem
     font-weight: normal
   div.city-autocomplete-list
-    padding: 0 1.5em
     width: 100%
     margin: 0 auto
     text-align: center
     & > input.city-name-input
+      padding-left: 15px
       height: 50px
       border: .5px solid #2a9d8f
       border-radius: 20px

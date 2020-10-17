@@ -15,4 +15,13 @@ div.weather-icon
         font-size: 8rem
 
   @media screen and (min-width: 992px)
-    grid-row: 3
+    display: flex
+    flex-direction: row
+    justify-content: center
+    column-gap: 0.5em
+    line-height: 1
+    & span.description
+      font-size: 3rem
+      align-self: center
+    & i
+      font-size: 6rem
