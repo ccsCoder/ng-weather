@@ -17,6 +17,12 @@ div.city-autocomplete-list
 p
   font-size: 1rem
 
+// Mobile landscape
+@media screen and (min-width:320px) and (max-width:767px) and (orientation:landscape) 
+  :host
+    grid-column: 1 / span 2
+
+// Tablet portrait
 @media screen and (min-width: 768px)
   div.city-selection
     max-width: 27em
@@ -35,6 +41,7 @@ p
       outline: none
       font-size: 1.25rem      
 
+// Tablet landscape and desktop
 @media screen and (min-width: 992px)
   :host
     grid-column: 1 / span 2
