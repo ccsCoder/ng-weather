@@ -10,5 +10,11 @@ div.temparature-indicator
       @media screen and (min-width: 768px)
         font-size: 12rem
 
-      @media screen and (min-width: 992px)
-        font-size: 10rem
+@media screen and (min-width: 992px)
+  :host
+    grid-row: 2
+    grid-column: 1
+
+  div.temparature-indicator
+    & > div.temp-number
+      font-size: 10rem

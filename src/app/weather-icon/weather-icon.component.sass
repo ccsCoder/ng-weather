@@ -14,7 +14,12 @@ div.weather-icon
       & i
         font-size: 8rem
 
-  @media screen and (min-width: 992px)
+@media screen and (min-width: 992px)
+  :host
+    grid-row: 3
+    grid-column: 1
+
+  div.weather-icon  
     display: flex
     flex-direction: row
     justify-content: center
