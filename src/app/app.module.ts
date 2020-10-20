@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TemparatureIndicatorComponent } from './temparature-indicator/temparature-indicator.component';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
 import { AddCityComponent } from './add-city/add-city.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddCityComponent } from './add-city/add-city.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+<a routerLink="goback" style="color:#FF0000">Go Back</a>
 <div class="container">
   <app-add-city (citySelectionPerformed)="citySelectedHandler($event)"></app-add-city>
   <app-city-name [cityName]="city">
@@ -18,3 +19,4 @@
   >
   </app-weather-details>
 </div>
+<router-outlet></router-outlet>

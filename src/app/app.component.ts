@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from './weather.service';
 import { WeatherIconProviderService } from './weather-icon-provider.service';
-
+import {Router} from '@angular/router'; 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,10 +19,11 @@ export class AppComponent implements OnInit {
   city: string = null;
 
   constructor(
+    private router: Router,
     private weatherService: WeatherService,
     private weatherIconProviderService: WeatherIconProviderService
+    
   ) { }
-
   citySelectedHandler($event): void {
     this.city = $event;
     this.getWeatherDetailsForCity();
@@ -39,11 +40,15 @@ export class AppComponent implements OnInit {
     this.iconURL = this.weatherIconProviderService.getWeatherIcon(weather[0].icon);
     this.windSpeed = Math.round(wind.speed);
   }
+    
 
   getWeatherDetailsForCity(): void {
     this.weatherService.getCityWeather(this.city).subscribe(data => this.setWeatherData(data));
   }
-
+  goback(pageName:string):void{
+    this.router.navigate(['${pageName}']);
+  }
   ngOnInit(): void {
   }
+  
 }
