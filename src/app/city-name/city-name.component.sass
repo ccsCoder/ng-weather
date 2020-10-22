@@ -1,8 +1,26 @@
 h1
-  font-size: 10rem
+  font-size: 3rem
   font-weight: normal
+  text-transform: capitalize
+  margin-top: 0
 
-// mobile devices
-@media screen and (max-width: 500px)
+  // Tablet
+  @media screen and (min-width: 768px)
+    font-size: 6rem
+    margin-bottom: 0.5em
+
+// Mobile landscape
+@media screen and (min-width:320px) and (max-width:767px) and (orientation:landscape) 
+  :host
+    grid-row: 1
+    grid-column: 1 / span 2
   h1
-    font-size: 3rem
+    font-size: 3.5rem
+
+// Tablet landscape and desktop
+@media screen and (min-width: 992px)
+  :host
+    grid-row: 1
+    grid-column: 1 / span 2
+  h1
+    font-size: 8rem

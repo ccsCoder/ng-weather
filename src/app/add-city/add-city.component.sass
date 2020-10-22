@@ -1,39 +1,47 @@
 div.city-selection
-  width: 60vw
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-
+  text-align: center
+  padding: 0 1em
+  max-width: 320px
+  margin: 0 auto
 h1
-  font-size: 6rem
+  margin: 0 0 0.25em
+  font-size: 2.9rem
   font-weight: normal
-
 div.city-autocomplete-list
   & > input.city-name-input
+    width: 100%
+    height: 40px
+    border-radius: 10px
     padding-left: 10px
-    padding-right: 10px
-    width: 40vw
-    height: 50px
-    border: .5px solid #2a9d8f
-    border-radius: 20px
-    outline: none
-    font-size: 2rem
-
-p
-  color: #e9c46a
-  font-size: 1.5rem
-
-@media screen and (max-width: 500px)
-  div.city-selection
-    width: 100vw
-  h1
-    font-size: 3rem
-  div.city-autocomplete-list
-    & > input.city-name-input
-      width: 90vw
-      height: 40px
-      border-radius: 10px
-      font-size: 1rem
-  p
     font-size: 1rem
+p
+  font-size: 1rem
+
+// Mobile landscape
+@media screen and (min-width:320px) and (max-width:767px) and (orientation:landscape) 
+  :host
+    grid-column: 1 / span 2
+
+// Tablet portrait
+@media screen and (min-width: 768px)
+  div.city-selection
+    max-width: 27em
+  h1
+    font-size: 4rem
+    font-weight: normal
+  div.city-autocomplete-list
+    width: 100%
+    margin: 0 auto
+    text-align: center
+    & > input.city-name-input
+      padding-left: 15px
+      height: 50px
+      border: .5px solid #2a9d8f
+      border-radius: 20px
+      outline: none
+      font-size: 1.25rem      
+
+// Tablet landscape and desktop
+@media screen and (min-width: 992px)
+  :host
+    grid-column: 1 / span 2

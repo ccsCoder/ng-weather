@@ -1,20 +1,39 @@
-@media screen and (max-width: 500px)
-  div.weather-icon
-    & span.description
-      font-size: 2rem
-    & i
-      font-size: 4rem
-
-.weather-icon
-  display: flex
-  justify-content: center
-  align-items: center
+div.weather-icon
   color: #98C1D9
-  transform: translate(0, -20%)
-
   & span.description
-    font-size: 3rem
+    font-size: 2rem
     text-transform: capitalize
-
   & i
-    font-size: 7rem
+    font-size: 4rem
+    display: block
+    text-align: center
+
+  @media screen and (min-width: 768px)
+      & span.description
+        font-size: 4rem
+      & i
+        font-size: 8rem
+
+// Mobile landscape
+@media screen and (min-width:320px) and (max-width:767px) and (orientation:landscape) 
+  :host
+    grid-row: 3
+    grid-column: 1
+
+// Tablet landscape and desktop
+@media screen and (min-width: 992px)
+  :host
+    grid-row: 3
+    grid-column: 1
+    padding-top: 0.5em
+  div.weather-icon  
+    display: flex
+    flex-direction: row
+    justify-content: center
+    column-gap: 0.5em
+    line-height: 1
+    & span.description
+      font-size: 3rem
+      align-self: center
+    & i
+      font-size: 5rem
